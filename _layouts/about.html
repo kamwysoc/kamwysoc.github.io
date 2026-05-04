@@ -1,0 +1,14 @@
+---
+layout: page
+---
+
+{{ content }}
+
+<script>
+  (function() {
+    var start = new Date(2015, 3, 1); // April 1, 2015
+    var now = new Date();
+    var years = Math.floor((now - start) / (1000 * 60 * 60 * 24 * 365.25));
+    document.getElementById('years-exp').textContent = years;
+  })();
+</script>

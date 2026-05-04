@@ -35,7 +35,6 @@ disqus:
 # if you don't have any of social below, comment the line
 # facebook: myfacebook
 # instagram: myinstagram
-twitter: kamwysoc
 linkedin: kamil-wysocki-22a67aa5
 github: kamwysoc
 medium: 'kamwysoc'
@@ -48,7 +47,7 @@ authors:
     bio: iOS Developer, software engineer
     external-image: false
     picture: /assets/images/profile.jpg
-    twitter: kamwysoc
+
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal

@@ -3,4 +3,61 @@ layout: page
 title: References
 ---
 
-{{content}}
+<style>
+  .references-grid img {
+    cursor: zoom-in;
+    max-width: 100%;
+    display: block;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    transition: opacity 0.2s;
+  }
+  .references-grid img:hover {
+    opacity: 0.85;
+  }
+
+  #lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  }
+  #lightbox.active {
+    display: flex;
+  }
+  #lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 6px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  }
+</style>
+
+<div class="references-grid">
+  {{ content }}
+</div>
+
+<div id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  document.querySelectorAll('.references-grid img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      document.getElementById('lightbox-img').src = this.src;
+      document.getElementById('lightbox').classList.add('active');
+    });
+  });
+  document.getElementById('lightbox').addEventListener('click', function() {
+    this.classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  });
+</script>
